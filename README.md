@@ -1,4 +1,4 @@
-###自动部署到vultr
+### 自动部署到vultr
 `# ss-fly-local`
 使用本地文件进行安装部署，预防依赖的文件被删
 
@@ -14,7 +14,7 @@ ss-fly-local/ss-fly.sh -ssr
 使用ubuntu 18.04 安装完成后将会自动部署ssr服务器 ,大约需要等2 -3 分钟才能完成
 
 
-###修改配置
+### 修改配置
 修改shadowsocksR.sh 文件下面的：
  pre_install方法中的 
  
@@ -27,6 +27,6 @@ ss-fly-local/ss-fly.sh -ssr
  (```)
  
  
- ###工具
+ ### 工具
  
  ssr工具 https://github.com/yang7206/ssr-file
