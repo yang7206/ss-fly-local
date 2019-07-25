@@ -156,7 +156,7 @@ install_ssr() {
         esac
 	#wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
 	chmod +x shadowsocksR.sh
-	./shadowsocksR.sh 2>&1 | tee shadowsocksR.log
+	$fly_dir/ss-fly-local/shadowsocksR.sh 2>&1 | tee shadowsocksR.log
 	install_bbr
 }
 
@@ -500,7 +500,11 @@ if [ "$EUID" -ne 0 ]; then
 	exit 1;
 fi
 
-case $1 in
+# Initialization step
+action=$1
+[ -z $1 ] && action=-ssr
+
+case "$action" in
 	-i|i|install )
         	install_ss $2 $3
 		;;
