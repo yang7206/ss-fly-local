@@ -522,6 +522,6 @@ case "$action" in
                 get_ss_link
                 ;;
 	* )
-		usage
+		install_ssr
 		;;
 esac
