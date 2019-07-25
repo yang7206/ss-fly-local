@@ -13,7 +13,7 @@ libsodium_file="libsodium-1.0.16"
 libsodium_url="https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz"
 
 fly_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-basedir="cd $(dirname $0); pwd -P"
+basedir="$( cd $(dirname $0); pwd -P )"
 
 kernel_ubuntu_url="http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.2/linux-image-4.10.2-041002-generic_4.10.2-041002.201703120131_amd64.deb"
 kernel_ubuntu_file="linux-image-4.10.2-041002-generic_4.10.2-041002.201703120131_amd64.deb"
