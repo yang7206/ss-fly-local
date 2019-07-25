@@ -156,7 +156,9 @@ install_ssr() {
         esac
 	#wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
 	chmod +x shadowsocksR.sh
-	$fly_dir/ss-fly-local/shadowsocksR.sh 2>&1 | tee shadowsocksR.log
+	#boot启动的时候 不能加路径
+	./shadowsocksR.sh 2>&1 | tee shadowsocksR.log
+	#$fly_dir/ss-fly-local/shadowsocksR.sh 2>&1 | tee shadowsocksR.log
 	install_bbr
 }
 
