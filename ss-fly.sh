@@ -156,10 +156,10 @@ install_ssr() {
                      ;;
         esac
 	#wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
-	chmod +x shadowsocksR.sh
+	chmod +x $basedir/shadowsocksR.sh
 	#boot启动的时候 不能加路径
 	echo "basedir : ${basedir}"
-	$basedir/shadowsocksR.sh 2>&1 | tee shadowsocksR.log
+	$basedir/shadowsocksR.sh 2>&1 | tee $basedir/shadowsocksR.log
 	#$fly_dir/ss-fly-local/shadowsocksR.sh 2>&1 | tee shadowsocksR.log
 	install_bbr
 }
