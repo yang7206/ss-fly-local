@@ -423,6 +423,7 @@ EOF
 # Install ShadowsocksR
 install(){
     # Install libsodium
+	echo "cur_dir :${cur_dir}"
     if [ ! -f /usr/lib/libsodium.a ]; then
         cd ${cur_dir}
         tar zxf ${libsodium_file}.tar.gz
