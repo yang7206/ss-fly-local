@@ -13,6 +13,7 @@ libsodium_file="libsodium-1.0.16"
 libsodium_url="https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz"
 
 fly_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+basedir="cd $(dirname $0); pwd -P"
 
 kernel_ubuntu_url="http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.10.2/linux-image-4.10.2-041002-generic_4.10.2-041002.201703120131_amd64.deb"
 kernel_ubuntu_file="linux-image-4.10.2-041002-generic_4.10.2-041002.201703120131_amd64.deb"
@@ -157,7 +158,8 @@ install_ssr() {
 	#wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocksR.sh
 	chmod +x shadowsocksR.sh
 	#boot启动的时候 不能加路径
-	./shadowsocksR.sh 2>&1 | tee shadowsocksR.log
+	echo "basedir : ${basedir}"
+	$basedir/shadowsocksR.sh 2>&1 | tee shadowsocksR.log
 	#$fly_dir/ss-fly-local/shadowsocksR.sh 2>&1 | tee shadowsocksR.log
 	install_bbr
 }
