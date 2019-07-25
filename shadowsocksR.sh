@@ -26,6 +26,7 @@ shadowsocks_r_url="https://github.com/shadowsocksrr/shadowsocksr/archive/3.2.2.t
 
 #Current folder
 cur_dir=`pwd`
+bdir="$( cd $(dirname $0); pwd -P )"
 # Stream Ciphers
 ciphers=(
 none
@@ -424,8 +425,9 @@ EOF
 install(){
     # Install libsodium
 	echo "cur_dir :${cur_dir}"
+	echo "bdir :${bdir}"
     if [ ! -f /usr/lib/libsodium.a ]; then
-        cd ${cur_dir}
+        cd ${bdir}
         tar zxf ${libsodium_file}.tar.gz
         cd ${libsodium_file}
         ./configure --prefix=/usr && make && make install
@@ -438,7 +440,7 @@ install(){
 
     ldconfig
     # Install ShadowsocksR
-    cd ${cur_dir}
+    cd ${bdir}
     tar zxf ${shadowsocks_r_file}.tar.gz
     mv ${shadowsocks_r_file}/shadowsocks /usr/local/
     if [ -f /usr/local/shadowsocks/server.py ]; then
@@ -473,7 +475,7 @@ install(){
 
 # Install cleanup
 install_cleanup(){
-    cd ${cur_dir}
+    cd ${bdir}
     rm -rf ${shadowsocks_r_file}.tar.gz ${shadowsocks_r_file} ${libsodium_file}.tar.gz ${libsodium_file}
 }
 
