@@ -503,6 +503,7 @@ fi
 # Initialization step
 action=$1
 [ -z $1 ] && action=-ssr
+echo "action :[$action]"
 
 case "$action" in
 	-i|i|install )
