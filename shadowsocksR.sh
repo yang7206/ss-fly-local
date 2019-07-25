@@ -331,7 +331,7 @@ pre_install(){
         apt-get -y update
         apt-get -y install python python-dev python-setuptools openssl libssl-dev curl wget unzip gcc automake autoconf make libtool
     fi
-    cd ${cur_dir}
+    cd ${bdir}
 }
 
 # Download files
@@ -362,7 +362,7 @@ download_files(){
 
 #Copy files
 copy_files(){
-	cp -a shadowsocks /etc/init.d/shadowsocks
+	cp -a $bdir/shadowsocks /etc/init.d/shadowsocks
 }
 
 # Firewall set
